@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Git-reference : Personal Git reference material" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Git-reference</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/techniq/git-reference">View on GitHub</a>
+
+          <h1 id="project_title">Git-reference</h1>
+          <h2 id="project_tagline">Personal Git reference material</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/techniq/git-reference/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/techniq/git-reference/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Initializing</h1>
+
+<p><code>git init</code> or <code>git clone &lt;url&gt;</code></p>
+
+<p>Later add remote if “git init” was used</p>
+
+<pre><code>git remote add origin git@github.com:username/Hello-World.git
+git branch --set-upstream master origin/master
+git pull -u origin master
+</code></pre>
+
+<h1>Merging</h1>
+
+<p>Keep all of a file (ours or theirs) during a conflict</p>
+
+<p>Keep ours:
+<code>git checkout --ours filename.ext</code></p>
+
+<p>Keep theirs:
+<code>git checkout --theirs filename.ext</code></p>
+
+<p>then <code>git add</code> the files</p>
+
+<h1>Reset</h1>
+
+<p><code>git reset HEAD</code>                # unstage: remove files from index (tracking)
+<code>git reset --soft HEAD^</code>     # uncommit: go back before last commit, with files in uncommitted state</p>
+
+<h1>Delete branch</h1>
+
+<p><code>git branch -D bugfix</code></p>
+
+<p>or 
+<code>git push origin --delete &lt;branchName&gt;</code></p>
+
+<h1>Find what tag/release a commit is included with</h1>
+
+<p><code>git describe --contains &lt;sha1&gt;</code></p>
+
+<hr><h1>Workflow</h1>
+
+<p><a href="http://notes.envato.com/developers/rebasing-merge-commits-in-git/">http://notes.envato.com/developers/rebasing-merge-commits-in-git/</a>
+<a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+
+<h2>Create feature branch</h2>
+
+<p>[master] git checkout -b feature</p>
+
+<h3>Pull changes from origin/master into master</h3>
+
+<p>[master] git fetch 
+[master] git rebase -p origin/master</p>
+
+<h3>Pull changes from master into feature</h3>
+
+<p>[feature] git rebase master</p>
+
+<h3>Merge feature branch into master</h3>
+
+<p>[master] git merge --no-ff feature</p>
+
+<h3>Delete feature branch when done</h3>
+
+<p>[master] git branch -d feature</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Git-reference maintained by <a href="https://github.com/techniq">techniq</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
