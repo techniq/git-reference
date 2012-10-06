@@ -56,14 +56,18 @@ git pull -u origin master
 
 <h1>Reset</h1>
 
-<p><code>git reset HEAD</code>                # unstage: remove files from index (tracking)
-<code>git reset --soft HEAD^</code>     # uncommit: go back before last commit, with files in uncommitted state</p>
+<p>unstage: remove files from index (tracking)</p>
+
+<p><code>git reset HEAD</code></p>
+
+<p>uncommit: go back before last commit, with files in uncommitted state</p>
+
+<p><code>git reset --soft HEAD^</code></p>
 
 <h1>Delete branch</h1>
 
-<p><code>git branch -D bugfix</code></p>
-
-<p>or 
+<p><code>git branch -D bugfix</code>
+or 
 <code>git push origin --delete &lt;branchName&gt;</code></p>
 
 <h1>Find what tag/release a commit is included with</h1>
@@ -77,24 +81,25 @@ git pull -u origin master
 
 <h2>Create feature branch</h2>
 
-<p>[master] git checkout -b feature</p>
+<p>[master] <code>git checkout -b feature</code></p>
 
 <h3>Pull changes from origin/master into master</h3>
 
-<p>[master] git fetch 
-[master] git rebase -p origin/master</p>
+<p>[master] <code>git fetch</code></p>
+
+<p>[master] <code>git rebase -p origin/master</code></p>
 
 <h3>Pull changes from master into feature</h3>
 
-<p>[feature] git rebase master</p>
+<p>[feature] <code>git rebase master</code></p>
 
 <h3>Merge feature branch into master</h3>
 
-<p>[master] git merge --no-ff feature</p>
+<p>[master] <code>git merge --no-ff feature</code></p>
 
 <h3>Delete feature branch when done</h3>
 
-<p>[master] git branch -d feature</p>
+<p>[master] <code>git branch -d feature</code></p>
       </section>
     </div>
 
